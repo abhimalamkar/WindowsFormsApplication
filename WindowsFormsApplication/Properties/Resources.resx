@@ -118,6 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BackGround_1_800x600" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackGround#1-800x600.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Flying_Nimbus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Flying_Nimbus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="GokuFightStance" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Goku_Combo1\GokuFightStance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -135,6 +141,12 @@
   </data>
   <data name="GokuStanceToWalk_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GokuStanceToWalk#1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GokuWalk_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GokuWalk#1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GokuWalk_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GokuWalk#2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Goku_Right_Block" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Goku Final Sprites\Goku Right Ready\Goku-Right-Block.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -63,6 +63,26 @@ namespace WindowsFormsApplication.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BackGround_1_800x600 {
+            get {
+                object obj = ResourceManager.GetObject("BackGround_1_800x600", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Flying_Nimbus {
+            get {
+                object obj = ResourceManager.GetObject("Flying_Nimbus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Goku_Right_Block {
             get {
                 object obj = ResourceManager.GetObject("Goku_Right_Block", resourceCulture);
@@ -276,6 +296,26 @@ namespace WindowsFormsApplication.Properties {
         internal static System.Drawing.Bitmap GokuStanceToWalk_1 {
             get {
                 object obj = ResourceManager.GetObject("GokuStanceToWalk_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GokuWalk_1 {
+            get {
+                object obj = ResourceManager.GetObject("GokuWalk_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GokuWalk_2 {
+            get {
+                object obj = ResourceManager.GetObject("GokuWalk_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

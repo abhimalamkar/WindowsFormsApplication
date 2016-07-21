@@ -17,11 +17,19 @@ namespace WindowsFormsApplication
         Thread th;
         Thread th1;
         int count;
+        Bitmap btm;
+        Graphics g;
+
         public Form1()
         {
+            btm = new Bitmap(800, 600);
             count = 0;
+
+            g = this.CreateGraphics();
+            this.Height = 600;
+            this.Width = 800;
             InitializeComponent();
-            player = new PlayerAnimation(this);
+            player = new PlayerAnimation(this,btm);
 
             //var task = new Task(Run);
             //task.Start();
@@ -53,14 +61,14 @@ namespace WindowsFormsApplication
 
             //btm = new Bitmap(110, 200);
 
-            
+
             //scG = Graphics.FromImage(btm);
 
             ////t = new Timer();
             ////t.Interval = 110;
             ////t.Tick += new EventHandler(timer_Tick);
 
-           
+
             //animate = new PlayerAnimation(new Bitmap[] { Properties.Resources._1, Properties.Resources._2, Properties.Resources._3, Properties.Resources._4, Properties.Resources._5 });
             ////game = new Game(this);
 
@@ -72,8 +80,9 @@ namespace WindowsFormsApplication
             ////    Environment.Exit(0);
             ////}
             ////game.Device.DrawImage(image, 0, 0);
-            
 
+            g.DrawImage(Properties.Resources.BackGround_1_800x600, new Point(0, 0));
+            
         }
 
         private void Form1_FormClosed(object sender, EventArgs e)
@@ -85,7 +94,12 @@ namespace WindowsFormsApplication
         private void timer_Tick(object sender, EventArgs e)
         {
             count++;
+            
             player.t_Tick(sender,e);
+
+            //g.Clear(Color.Black);
+
+            
             //pictureBox1.Image = player.GiveNextImage();
 
             //if (count % 5 == 0)
@@ -104,11 +118,11 @@ namespace WindowsFormsApplication
         {
             if (e.KeyCode == Keys.Up)
             {
-                player.pos.Y -= 5;
+                player.pos.Y -= 20;
             }
             else if (e.KeyCode == Keys.Right)
             {
-                player.playerState = "walkingRight";
+                player.playerState = "walk";
                 player.pos.X += 5;
             }
             else if (e.KeyCode == Keys.Left)
@@ -137,7 +151,7 @@ namespace WindowsFormsApplication
             }
             else
             {
-               // player.playerState = "stanginRight";
+                player.playerState = "walkingRight";
             }
 
             //player.pos.Y += 20;

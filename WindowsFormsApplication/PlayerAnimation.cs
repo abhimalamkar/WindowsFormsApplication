@@ -24,12 +24,16 @@ namespace WindowsFormsApplication
 
         Bitmap[] standing;
 
+        Bitmap[] Walk;
+
+        Bitmap back;
+
         int[] place = new int[10] { 0,0,0,0,0,0,0,0,0,0 };
 
         //PlayerAnimation animate;
         Graphics g;
-        Graphics scG;
-        Bitmap btm;
+        //Graphics scG;
+        
         Timer t;
         public Point pos;
         double x, y, xval, yval;
@@ -38,8 +42,9 @@ namespace WindowsFormsApplication
 
       //  string[] animation = new string[5] { "walingRight", "walingLeft", "stanginRight", "stanfingLeft", "jump" };
 
-        public PlayerAnimation(Form form)
+        public PlayerAnimation(Form form,Bitmap btm)
         {
+            back = btm;
             pos = new Point(0, 0);
 
             images = new Bitmap[] { Properties.Resources.GokuFightStance, Properties.Resources.GokuKamahaCharge_1_2, Properties.Resources.GokuKamahaCharge_1_1_copy, Properties.Resources.GokuKamahaCharge_1_4, Properties.Resources.GokuKamahaCharge_1_4_1 };
@@ -48,20 +53,20 @@ namespace WindowsFormsApplication
 
             block = new Bitmap[] { Properties.Resources.Goku_Right_BlockStepBack, Properties.Resources.Goku_Right_Block_2,Properties.Resources.Goku_Right_Block};
 
+            Walk = new Bitmap[] { Properties.Resources.GokuStanceToWalk_1, Properties.Resources.GokuWalk_1, Properties.Resources.GokuWalk_2 };
+
             combo = new Bitmap[] { Properties.Resources.Goku_Right_Combo_1_1, Properties.Resources.Goku_Right_Combo_1_2, Properties.Resources.Goku_Right_Combo_1_3, Properties.Resources .Goku_Right_Combo_1_4_copy, Properties.Resources .Goku_Right_Combo_1_5, Properties.Resources .Goku_Right_Combo_1_6, Properties.Resources .Goku_Right_Combo_1_7, Properties.Resources .Goku_Right_Combo_1_8, Properties.Resources .Goku_Right_Combo_1_9};
 
             standing = new Bitmap[] { Properties.Resources.Goku_Right_Standing_1_1, Properties.Resources.Goku_Right_Standing_1_2, Properties.Resources.Goku_Right_Standing_1_3, Properties.Resources.Goku_Right_Standing_1_4 };
 
             g = form.CreateGraphics();
 
-            btm = new Bitmap(800, 600);
-
-            scG = Graphics.FromImage(btm);
+           // scG = Graphics.FromImage(btm);
 
 
 
             t = new Timer();
-            t.Interval = 500;
+            t.Interval = 10;
             t.Tick += new EventHandler(t_Tick);
 
         }
@@ -104,8 +109,20 @@ namespace WindowsFormsApplication
 
             switch (playerState)
             {
-                case "walkingRight":
-                    b = standingRight;
+                case "thow":
+                    {
+                        if (place[0] < images.Length)
+                        {
+                            b = images[place[0]++];
+                        }
+                        else
+                        {
+                            place[0] = 0;
+                            b = images[place[0]++];
+
+                        }
+                    }
+                    
                     break;
 
                 case "block":
@@ -122,6 +139,7 @@ namespace WindowsFormsApplication
                         }
                     }
                     break;
+
 
                 case "standing":
                     {
@@ -153,20 +171,26 @@ namespace WindowsFormsApplication
                     }
                     break;
 
+                case "walk":
+                    {
+                        if (place[4] < Walk.Length)
+                        {
+                            b = Walk[place[4]++];
+                        }
+                        else
+                        {
+                            place[4] = 0;
+                            b = Walk[place[4]++];
+
+                        }
+                    }
+                    break;
+
 
                 default :
 
                     {
-                        if (place[0] < images.Length)
-                        {
-                            b = images[place[0]++];
-                        }
-                        else
-                        {
-                            place[0] = 0;
-                            b = images[place[0]++];
-
-                        }
+                        b = standingRight;
                     }
                     break;
             }
@@ -177,11 +201,20 @@ namespace WindowsFormsApplication
 
         public void t_Tick(object sender, EventArgs e)
         {
-            //pos.Y += 50;
+            pos.Y += 40;
 
-            scG.Clear(Color.Black);
-            scG.DrawImage(GiveNextImage(), pos);
-            g.DrawImage(btm, pos);
+            if (pos.Y > (600-100))
+            {
+                pos.Y = 600-100;
+            }
+
+            //scG.Clear(Color.Black);
+            //scG.DrawImage(GiveNextImage(), pos);
+            //g.DrawImage(back, pos);
+            //scG.Clear(Color.Black);
+            //scG.DrawImage(GiveNextImage(), pos);
+            g.Clear(Color.Black);
+            g.DrawImage(GiveNextImage(), pos);
 
         }
 
@@ -197,10 +230,10 @@ namespace WindowsFormsApplication
 
         }
 
-        public int playerPhysics()
+        public int playerPhysics(int v)
         {
 
-            return 0;
+            return 1/2*(v*v);
         }
     }
 }

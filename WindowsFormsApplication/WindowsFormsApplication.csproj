@@ -53,6 +53,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Game.cs" />
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlayerAnimation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerAnimation.resx">
       <DependentUpon>PlayerAnimation.cs</DependentUpon>
@@ -173,6 +182,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Goku Final Sprites\Goku Right Ready\Goku-Right-Standing#1-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackGround#1-800x600.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GokuWalk#1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GokuWalk#2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flying_Nimbus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
